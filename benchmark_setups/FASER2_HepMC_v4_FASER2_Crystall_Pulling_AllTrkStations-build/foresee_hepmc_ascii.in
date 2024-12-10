@@ -1,0 +1,6 @@
+/control/execute vis.mac
+/vis/scene/add/magneticField 105
+/generator/select hepmcAscii
+/generator/hepmcAscii/open events_14TeV_m0.1GeV_c1e-05to_11_-11_test1.hepmc
+/generator/hepmcAscii/verbose 1
+/run/beamOn 5

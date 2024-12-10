@@ -1,0 +1,7 @@
+/control/execute vis.mac
+/vis/scene/add/magneticField 100
+/generator/select hepmcAscii
+/generator/hepmcAscii/open /Users/mcfayden/Work/FASER/FASER2/FASER_FORESEE/R1-L10-R1x3_DarkPhoton//events_14TeV_m2.8184GeV_c4.281332398719396e-06to_-13_13_s1.hepmc
+/generator/hepmcAscii/verbose 0
+/run/beamOn 1000000     
+

@@ -1,0 +1,109 @@
+//
+// ********************************************************************
+// * License and Disclaimer                                           *
+// *                                                                  *
+// * The  Geant4 software  is  copyright of the Copyright Holders  of *
+// * the Geant4 Collaboration.  It is provided  under  the terms  and *
+// * conditions of the Geant4 Software License,  included in the file *
+// * LICENSE and available at  http://cern.ch/geant4/license .  These *
+// * include a list of copyright holders.                             *
+// *                                                                  *
+// * Neither the authors of this software system, nor their employing *
+// * institutes,nor the agencies providing financial support for this *
+// * work  make  any representation or  warranty, express or implied, *
+// * regarding  this  software system or assume any liability for its *
+// * use.  Please see the license in the file  LICENSE  and URL above *
+// * for the full disclaimer and the limitation of liability.         *
+// *                                                                  *
+// * This  code  implementation is the result of  the  scientific and *
+// * technical work of the GEANT4 collaboration.                      *
+// * By using,  copying,  modifying or  distributing the software (or *
+// * any work based  on the software)  you  agree  to acknowledge its *
+// * use  in  resulting  scientific  publications,  and indicate your *
+// * acceptance of all terms of the Geant4 Software license.          *
+// ********************************************************************
+//
+/// \file eventgenerator/HepMC/HepMCEx01/src/FASER2DetectorParameterDef.icc
+/// \brief The file with detector paremeter definistions
+//
+//
+
+fexpHall_x = 10*m;
+fexpHall_y = 10*m;
+fexpHall_z = 50*m;
+
+//fmag_sphi =   0.*deg;
+//fmag_dphi = 360.*deg;
+//fmagcase_rmax =  130.*cm;
+//fmag_rmax =  100.*cm;
+
+fmag1_dz =  4.*m;
+fmag1_locz = 10.1*m;
+fmag_xmax =  150.*cm;
+fmag_xmin =  -150.*cm;
+fmag_ymax =  50.*cm;
+fmag_ymin =  -50.*cm;
+
+// CrystalPulling design
+fCPMagnetLengthZ = 1.25*m;
+fCPMagnetInnerR = 0.8*m;
+fCPMagnetOuterR = 1.2*m;
+fNCPMagnets = 3;
+fCPMagnetGap= 0.25*m;
+fCPMagnetSpacing = 0.25*m; //updates during construction
+fCPMagnetZpos= 12.5*m;
+
+// For detector
+SD1_locz = 10.05*m;
+SD2_locz = 14.15*m;
+SD3_locz = 15.*m;
+SD4_locz = 16.*m;
+SD5_locz = 20.*m;
+
+ftrkTubs_rmax =  1.3*m;
+ftrkTubs_rmin =  1.*m;
+ftrkTubs_dz   = 5.*m;
+ftrkTubs_sphi =   0.*deg;
+ftrkTubs_dphi = 360.*deg;
+
+fnotrkLayers = 5;
+ftracker_radius[0] = 25.*cm;
+ftracker_radius[1] = 30.*cm;
+ftracker_radius[2] = 35.*cm;
+ftracker_radius[3] = 40.*cm;
+ftracker_radius[4] = 45.*cm;
+ftracker_thick     =  0.5*cm;
+for( int il=0; il < 5; il++ ) {
+  ftracker_length[il] = ftracker_radius[il];
+}
+
+fcaloTubs_rmax = 300.*cm;
+fcaloTubs_rmin =  50.*cm;
+fcaloTubs_dz   = 200.*cm;
+fcaloTubs_sphi =   0.*deg;
+fcaloTubs_dphi = 360.*deg;
+
+fabsorber_thick = 3.*cm;
+fscinti_thick = 2.*cm;
+fnocaloLayers = int( (fcaloTubs_rmax - fcaloTubs_rmin) /
+                    (fabsorber_thick + fscinti_thick) );
+
+fsegmentsinPhi = 48;
+fcaloCell_rmax = fcaloTubs_rmax;
+fcaloCell_rmin = fcaloTubs_rmin;
+fcaloCell_dz   = fcaloTubs_dz;
+fcaloCell_sphi = fcaloTubs_sphi;
+fcaloCell_dphi = fcaloTubs_dphi / fsegmentsinPhi;
+
+fsegmentsinZ = 20;
+fcaloRing_rmax = fcaloCell_rmax;
+fcaloRing_rmin = fcaloCell_rmin;
+fcaloRing_dz   = fcaloCell_dz / fsegmentsinZ ;
+fcaloRing_sphi = fcaloCell_sphi;
+fcaloRing_dphi = fcaloCell_dphi;
+
+fnomucounter = 4;
+fmuBox_radius = 350.*cm;
+fmuBox_width  = fmuBox_radius - 5.*cm;
+fmuBox_thick  = 1.*cm;
+fmuBox_length = fexpHall_z - 10.*cm;
