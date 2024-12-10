@@ -15,10 +15,11 @@ source /cvmfs/sft.cern.ch/lcg/views/LCG_105/x86_64-el9-gcc13-opt/setup.sh
 Get FASER2 G4 geometry and create "newGeo" version:
 ```bash
 git clone https://github.com/joshmcfayden/FASER2_G4.git
-cp -r FASER2_G4/FASER2_HepMC_v4_FASER2_Default_1stTrkStation newGeo
+cd FASER2_G4/benchmark_setups
+cp -r FASER2_HepMC_v4_FASER2_Cavern_Rect_Baseline_Bhoriz newGeo
 cd newGeo
-mv FASER2_HepMC_v4_FASER2_Default_1stTrkStation.cc newGeo.cc
-sed -i 's/FASER2_HepMC_v4_FASER2_Default_1stTrkStation/newGeo/g' *.*
+mv FASER2_HepMC_v4_FASER2_Cavern_Rect_Baseline_Bhoriz.cc newGeo.cc
+sed -i 's/FASER2_HepMC_v4_FASER2_Cavern_Rect_Baseline_Bhoriz/newGeo/g' *.*
 ```
 
 Creat build directory and compile:
@@ -32,13 +33,13 @@ make
 
 Test run:
 ```bash
-cp ../FASER2_G4/FASER2_HepMC_v4_FASER2_Default_1stTrkStation-build/* .
+cp ../FASER2_HepMC_v4_FASER2_Cavern_Rect_Baseline_Bhoriz-build/* .
 ./newGeo hepmc_ascii.in
 ```
 
 Once compiled, to just run for every new login you just need the following setup line:
 ```bash
-source /cvmfs/sft.cern.ch/lcg/views/LCG_101/x86_64-centos7-gcc10-opt/setup.sh
+source /cvmfs/sft.cern.ch/lcg/views/LCG_105/x86_64-el9-gcc13-opt/setup.sh
 ```
 
 
