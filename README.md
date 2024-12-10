@@ -9,7 +9,7 @@ The HepMC files are passed to G4 via the `/generator/hepmcAscii/open` flag - see
 
 Setup G4 and enviroment from LCG:
 ```bash
-source /cvmfs/sft.cern.ch/lcg/views/LCG_101/x86_64-centos7-gcc10-opt/setup.sh
+source /cvmfs/sft.cern.ch/lcg/views/LCG_105/x86_64-el9-gcc13-opt/setup.sh
 ```
 
 Get FASER2 G4 geometry and create "newGeo" version:
