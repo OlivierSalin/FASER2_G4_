@@ -46,10 +46,10 @@ fmag_ymin =  -50.*cm;
 
 // For detector
 SD1_locz = 10.05*m;
-SD2_locz = 14.15*m;
-SD3_locz = 15.*m;
-SD4_locz = 16.*m;
-SD5_locz = 20.*m;
+SD2_locz = 11.0*m;
+SD3_locz = 15.5*m;
+SD4_locz = 19.5*m;
+SD5_locz = 20.5*m;
 
 ftrkTubs_rmax =  1.3*m;
 ftrkTubs_rmin =  1.*m;
