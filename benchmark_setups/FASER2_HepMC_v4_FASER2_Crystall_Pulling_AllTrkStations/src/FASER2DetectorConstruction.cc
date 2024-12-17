@@ -146,7 +146,9 @@ G4VPhysicalVolume* FASER2DetectorConstruction::Construct()
 
   // CrystalPulling design
   for (int i = 0; i < fNCPMagnets; ++i) {
-    G4double offset = fCPMagnetZpos + (i - 0.5 * (fNCPMagnets - 1)) * (fCPMagnetSpacing + fCPMagnetLengthZ);
+    // G4double offset = fCPMagnetZpos + (i - 0.5 * (fNCPMagnets - 1)) * (fCPMagnetSpacing + fCPMagnetLengthZ);
+    //// fCPMagnetZpos define as the position of the beggining of the first magnet modules
+    G4double offset = fCPMagnetZpos + i*fCPMagnetSpacing + i*fCPMagnetLengthZ + fCPMagnetLengthZ/2. ; 
     G4ThreeVector magPos(0., 0., offset);
 
     G4VSolid* magWindowSolid = new G4Tubs("MagnetWindow", 0., fCPMagnetInnerR, fCPMagnetLengthZ / 2., 0., CLHEP::twopi);
