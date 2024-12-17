@@ -51,7 +51,7 @@ fCPMagnetOuterR = 1.2*m;
 fNCPMagnets = 3;
 fCPMagnetGap= 0.25*m;
 fCPMagnetSpacing = 0.25*m; //updates during construction
-fCPMagnetZpos= 13.625*m;
+fCPMagnetZpos= 11.5*m;
 
 // For detector
 SD1_locz = 10.*m;
